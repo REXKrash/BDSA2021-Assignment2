@@ -1,13 +1,13 @@
 using System;
-using System.Reflection;
 
 namespace Assignment2
 {
-    public class Student
+    public record ImmutableStudent
     {
-        public int Id { get; }
-        public string GivenName { get; set; }
-        public string Surname { get; set; }
+        public int Id { get; init; }
+        public string GivenName { get; init; }
+        public string Surname { get; init; }
+
         public Status StudentStatus
         {
             get
@@ -34,11 +34,11 @@ namespace Assignment2
                 return Status.INACTIVE;
             }
         }
-        public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public DateTime? GraduationDate { get; set; }
+        public DateTime StartDate { get; init; }
+        public DateTime? EndDate { get; init; }
+        public DateTime? GraduationDate { get; init; }
 
-        public Student(int Id, string GivenName, string Surname, DateTime StartDate, DateTime? EndDate, DateTime? GraduationDate)
+        public ImmutableStudent(int Id, string GivenName, string Surname, DateTime StartDate, DateTime? EndDate, DateTime? GraduationDate)
         {
             this.Id = Id;
             this.GivenName = GivenName;
@@ -46,11 +46,6 @@ namespace Assignment2
             this.StartDate = StartDate;
             this.EndDate = EndDate;
             this.GraduationDate = GraduationDate;
-        }
-
-        public override string ToString()
-        {
-            return $"Student - ID: {Id}, {GivenName} {Surname} Status: {StudentStatus.ToString()}";
         }
     }
 }

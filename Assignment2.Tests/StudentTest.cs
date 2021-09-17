@@ -8,10 +8,10 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_ToString_Given_Student_ID_69_Name_Jens_Surname_Jensen_StartDate_Today_EndDate_Null_GraduationDate_3YearsFromToday_Return_String_Student_ID_69_Jens_Jensen_Status_New()
         {
+            // Arrange
             var today = DateTime.Now;
             var graduation = today.AddYears(3);
 
-            // Arrange
             var student = new Student(69, "Jens", "Jensen", today, null, graduation);
 
             // Act
@@ -24,11 +24,11 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_GetStatus_ActiveStudent()
         {
+            // Arrange
             var today = DateTime.Now;
             var startDate = today.AddMonths(-8);
             var graduation = today.AddYears(3);
 
-            // Arrange
             var student = new Student(69, "Jens", "Jensen", startDate, null, graduation);
 
             // Act
@@ -41,12 +41,12 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_GetStatus_DropoutStudent()
         {
+            // Arrange
             var today = DateTime.Now;
             var startDate = today.AddMonths(-2);
             var endDate = today.AddMonths(-1);
             var graduation = today.AddYears(3);
 
-            // Arrange
             var student = new Student(69, "Jens", "Jensen", startDate, endDate, graduation);
 
             // Act
@@ -59,10 +59,10 @@ namespace Assignment2.Tests
         [Fact]
         public void Student_GetStatus_GraduatedStudent()
         {
+            // Arrange
             var today = DateTime.Now;
             var graduation = today.AddDays(-3);
 
-            // Arrange
             var student = new Student(69, "Jens", "Jensen", today, null, graduation);
 
             // Act
