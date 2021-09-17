@@ -31,12 +31,8 @@ namespace Assignment2.Tests
             var immutableStudent1 = new ImmutableStudent(69, "Jens", "Jensen", today, null, graduation);
             var immutableStudent2 = new ImmutableStudent(69, "Jens", "Jensen", today, null, graduation);
 
-            var student1 = new Student(69, "Jens", "Jensen", today, null, graduation);
-            var student2 = new Student(69, "Jens", "Jensen", today, null, graduation);
-
             // Assert
             Assert.Equal(immutableStudent1, immutableStudent2);
-            Assert.NotEqual(student1, student2);
         }
     }
 }
