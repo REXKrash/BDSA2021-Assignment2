@@ -47,5 +47,10 @@ namespace Assignment2
             this.EndDate = EndDate;
             this.GraduationDate = GraduationDate;
         }
+
+        public override string ToString()
+        {
+            return "ImmutableStudent { Id = "+Id+", GivenName = "+GivenName+", Surname = "+Surname+", StudentStatus = "+StudentStatus.ToString()+", StartDate = "+StartDate.ToString("dd-MM-yyyy HH:mm:ss")+", EndDate = "+EndDate?.ToString("dd-MM-yyyy HH:mm:ss")+", GraduationDate = "+GraduationDate?.ToString("dd-MM-yyyy HH:mm:ss")+" }";
+        }
     }
 }
